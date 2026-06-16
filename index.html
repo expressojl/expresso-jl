@@ -929,8 +929,8 @@
 </div>
 
 <!-- Firebase SDK -->
-<script src="https://cdn.jsdelivr.net/npm/firebase/compat/app/firebase-app-compat.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/firebase/compat/database/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
 <script>
 // ── FIREBASE CONFIG ────────────────────────────────────
@@ -945,7 +945,9 @@ const firebaseConfig = {
   appId: "1:542032636014:web:722d41d3546c4b4e6fde7f"
 };
 
-firebase.initializeApp(firebaseConfig);
+try {
+  firebase.initializeApp(firebaseConfig);
+} catch(e) {}
 const db = firebase.database();
 const ordersRef = db.ref('ordens');
 const metaRef   = db.ref('meta/nextId');
